@@ -174,17 +174,17 @@ ul {
   margin-right: 10px;
 }
 
-.contacts-link:hover {
-  fill: #2196f3;
-}
-
 .linki {
   text-decoration: none;
 }
 
-.linki:hover,
-:focus {
+.linki:hover, :focus {
   color: #2196f3;
+}
+
+.linki:hover, :focus
+.contacts-link:hover, :focus {
+  fill: #2196f3;
 }
 
 /* Стили для Studio */
@@ -289,12 +289,8 @@ ul {
   display: flex;
 }
 
-.icon-client {
-  fill: #afb1b8;
-}
-
-.customers-client-icon .icon-client:hover {
-  fill: var(--accent-color);
+.customers-client:not(:last-child) {
+  margin-right: 30px;
 }
 
 .customers-client-icon {
@@ -313,16 +309,17 @@ ul {
   height: 90px;
 }
 
-.customers-client:not(:last-child) {
-  margin-right: 30px;
-}
-
-.customers-client-icon .icon-client:hover {
-  fill: var(--accent-color);
+.icon-client {
+  fill: #afb1b8;
 }
 
 .customers-client-icon:hover {
- background: #FFFFFF;
+  border: 1px solid var(--accent-color);
+}
+
+.customers-client-icon:hover .icon-client {
+  border: var(--accent-color);
+  fill: var(--accent-color);
 }
 
 .section-work {
@@ -408,16 +405,16 @@ ul {
   border-radius: 50%;
 }
 
-.icon {
-  fill: #afb1b8;
-}
-
-.icon-social-link:hover {
+.icon-social-link:hover, :focus  {
   background-color: var(--accent-color);
 }
 
-.icon-social-link .icon:hover {
-  fill: #ffffff;
+.icon-social-link .icon {
+  fill: #afb1b8;
+}
+
+.icon-social-link:hover .icon {
+  fill: white;
 }
 
 .features-team:not(:last-child) {
@@ -533,12 +530,14 @@ ul {
   margin-right: 8px;
 }
 
+/* footer */
+
 .footer {
   background: #2f303a;
 }
 
 /* Дополнительня информация */
-.info-navigation {
+.location {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -547,7 +546,7 @@ ul {
   letter-spacing: 0.03em;
   color: #ffffff;
 }
-.info-mail {
+.footer-info-mail {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -556,7 +555,7 @@ ul {
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
 }
-.info-tel {
+.footer-info-tel {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -566,19 +565,16 @@ ul {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* .footer-icon {
+.pozu {
   display: flex;
-  align-content: center;
   justify-items: center;
-} */
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 
 .footer-icon-social {
-  /* display: flex; */
-}
-
-.footer-social-item {
-  display: inline-flex;
-  justify-items: ;
+  display: flex;
 }
 
 .footer-social-item:not(:last-child) {
@@ -603,7 +599,8 @@ ul {
   background-color: var(--accent-color);
 }
 
-.mailing {
+.mailing { 
+  display: flex; 
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: bold;
